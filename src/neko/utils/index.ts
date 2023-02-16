@@ -1,11 +1,11 @@
 /*
  * @Author: Kabuda-czh
- * @Date: 2023-02-16 11:35:25
+ * @Date: 2023-02-16 09:35:30
  * @LastEditors: Kabuda-czh
- * @LastEditTime: 2023-02-16 11:37:02
- * @FilePath: \koishi-plugin-status-pro\src\neko\utils\index.ts
- * @Description: 
- * 
+ * @LastEditTime: 2023-02-16 17:14:31
+ * @FilePath: \KBot-App\plugins\status-pro\src\neko\utils\index.ts
+ * @Description:
+ *
  * Copyright (c) 2023 by Kabuda-czh, All Rights Reserved.
  */
 import os from "os";
@@ -48,7 +48,7 @@ export async function getSystemInfo(name: string, koishiVersion: string, pluginS
     dashboard: [
       {
         progress: +cpuUsage,
-        title: `${+cpuUsage * 100}% - ${avg}Ghz`,
+        title: `${(+cpuUsage * 100).toFixed(0)}% - ${avg}Ghz`,
       },
       {
         progress: +memoryUsage,
