@@ -1,0 +1,29 @@
+{
+  "name": "koishi-plugin-status-pro",
+  "description": "status pro",
+  "version": "1.0.1",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {},
+  "keywords": [
+    "chatbot",
+    "koishi",
+    "plugin",
+    "status"
+  ],
+  "peerDependencies": {
+    "koishi": "4.11.6",
+    "koishi-plugin-puppeteer": "^3.3.1"
+  },
+  "dependencies": {
+    "systeminformation": "^5.17.0"
+  },
+  "devDependencies": {
+    "@types/systeminformation": "^5.17.0"
+  }
+}
