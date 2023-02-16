@@ -1,11 +1,11 @@
 /*
  * @Author: Kabuda-czh
- * @Date: 2023-02-16 11:35:25
+ * @Date: 2023-02-15 23:03:33
  * @LastEditors: Kabuda-czh
- * @LastEditTime: 2023-02-16 11:36:51
- * @FilePath: \koishi-plugin-status-pro\src\neko\js\render.js
- * @Description: 
- * 
+ * @LastEditTime: 2023-02-16 11:22:05
+ * @FilePath: \status-pro\src\neko\js\render.js
+ * @Description:
+ *
  * Copyright (c) 2023 by Kabuda-czh, All Rights Reserved.
  */
 const parser = new DOMParser();
