@@ -2,7 +2,7 @@
  * @Author: Kabuda-czh
  * @Date: 2023-02-16 11:35:25
  * @LastEditors: Kabuda-czh
- * @LastEditTime: 2023-02-16 17:17:00
+ * @LastEditTime: 2023-02-16 17:37:10
  * @FilePath: \koishi-plugin-status-pro\src\index.ts
  * @Description: 
  * 
