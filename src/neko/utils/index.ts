@@ -2,7 +2,7 @@
  * @Author: Kabuda-czh
  * @Date: 2023-02-16 09:35:30
  * @LastEditors: Kabuda-czh
- * @LastEditTime: 2023-02-16 17:36:58
+ * @LastEditTime: 2023-02-16 18:28:27
  * @FilePath: \koishi-plugin-status-pro\src\neko\utils\index.ts
  * @Description:
  *
@@ -10,6 +10,8 @@
  */
 import os from "os";
 import * as si from "systeminformation";
+
+const ErrorInfo = "N / A";
 
 export async function getSystemInfo(
   name: string,
@@ -55,16 +57,16 @@ export async function getSystemInfo(
         title: `${(+cpuUsage * 100).toFixed(0)}% - ${avg}Ghz`,
       },
       {
-        progress: isNaN(+memoryUsage) ? 0 : +memoryUsage,
-        title: `${isNaN(+memoryUsed) ? 0 : memoryUsed} / ${memoryTotal}`,
+        progress: +memoryUsage || 0,
+        title: isNaN(+memoryUsed) ? ErrorInfo : `${memoryUsed} / ${memoryTotal}`,
       },
       {
-        progress: isNaN(+swapUsage) ? 0 : +swapUsage,
-        title: `${isNaN(+swapUsed) ? 0 : swapUsed} / ${swapTotal}`,
+        progress: +swapUsage || 0,
+        title: isNaN(+swapUsed) ? ErrorInfo : `${swapUsed} / ${swapTotal}`,
       },
       {
-        progress: isNaN(+diskUsage) ? 0 : +diskUsage,
-        title: `${isNaN(+diskUsed) ? 0 : diskUsed} / ${diskTotal}`,
+        progress: +diskUsage || 0,
+        title: isNaN(+diskUsed) ? ErrorInfo : `${diskUsed} / ${diskTotal}`,
       },
     ],
     information: [
