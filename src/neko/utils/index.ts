@@ -2,8 +2,8 @@
  * @Author: Kabuda-czh
  * @Date: 2023-02-16 09:35:30
  * @LastEditors: Kabuda-czh
- * @LastEditTime: 2023-02-16 17:14:31
- * @FilePath: \KBot-App\plugins\status-pro\src\neko\utils\index.ts
+ * @LastEditTime: 2023-02-16 17:36:58
+ * @FilePath: \koishi-plugin-status-pro\src\neko\utils\index.ts
  * @Description:
  *
  * Copyright (c) 2023 by Kabuda-czh, All Rights Reserved.
@@ -11,7 +11,11 @@
 import os from "os";
 import * as si from "systeminformation";
 
-export async function getSystemInfo(name: string, koishiVersion: string, pluginSize: number) {
+export async function getSystemInfo(
+  name: string,
+  koishiVersion: string,
+  pluginSize: number
+) {
   const promisList = await Promise.all([
     getCPUUsage(),
     si.osInfo(),
@@ -51,16 +55,16 @@ export async function getSystemInfo(name: string, koishiVersion: string, pluginS
         title: `${(+cpuUsage * 100).toFixed(0)}% - ${avg}Ghz`,
       },
       {
-        progress: +memoryUsage,
-        title: `${memoryUsed} / ${memoryTotal}`,
+        progress: isNaN(+memoryUsage) ? 0 : +memoryUsage,
+        title: `${isNaN(+memoryUsed) ? 0 : memoryUsed} / ${memoryTotal}`,
       },
       {
-        progress: +swapUsage,
-        title: `${swapUsed} / ${swapTotal}`,
+        progress: isNaN(+swapUsage) ? 0 : +swapUsage,
+        title: `${isNaN(+swapUsed) ? 0 : swapUsed} / ${swapTotal}`,
       },
       {
-        progress: +diskUsage,
-        title: `${diskUsed} / ${diskTotal}`,
+        progress: isNaN(+diskUsage) ? 0 : +diskUsage,
+        title: `${isNaN(+diskUsed) ? 0 : diskUsed} / ${diskTotal}`,
       },
     ],
     information: [
